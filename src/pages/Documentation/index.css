@@ -1,0 +1,118 @@
+
+.documentation {
+    background-color: #FCFDFF;
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    width: 100vw;
+}
+
+.desk-only {
+
+}
+
+.codeContainer {
+    overflow: auto;
+    padding: 0 40px 32px 32px;
+    width: 100%;
+}
+
+.codeContainer img {
+    margin: 24px 0;
+    max-width: 100%;
+    width: 1017px;
+}
+
+.codeContainer h1, h2, h3, h4, h5 {
+    color: #303f9f;
+    font-family: Open Sans, serif;
+    text-transform: uppercase;
+}
+
+.codeContainer p, td, li {
+    color: #787993;
+    font-family: Open Sans, serif;
+    font-size: 14px;
+    line-height: 34px;
+}
+
+.codeContainer ul, ol {
+    line-height: normal;
+}
+
+.codeContainer a {
+    line-height: normal;
+    color: #3f51b5;
+    text-decoration: none;
+}
+
+.codeContainer a:hover {
+     text-decoration: underline;
+}
+
+.codeContainer code {
+  font-size: 14px;
+  color: #303f9f;
+}
+
+.codeContainer table {
+    width: 100%;
+}
+
+.codeContainer th {
+    border: 1px solid #303f9f;
+    color: #303f9f;
+    font-family: Open Sans, serif;
+    font-size: 14px;
+    padding: 8px;
+    text-align: left;
+}
+
+.codeContainer td {
+    border: 1px solid #303f9f;
+    min-width: 150px;
+    padding: 8px;
+}
+
+.codeContainer sub {
+    color: #303f9f;
+    font-size: 10px;
+}
+
+
+.codeContainer p code, td code, li code {
+    background-color: #dfe0e8;
+    border-radius: 2px;
+    color: #303f9f;
+    font-family: Inconsolata, Monaco, Consolas, "Courier New", Courier, monospace;
+    font-size: 13px;
+    padding: 2px 4px;
+}
+
+.codeContainer pre code {
+    background-color: transparent;
+}
+
+@media (max-width: 992px) {
+    .codeContainer {
+        margin-left: 0;
+        width: 100%;
+    }
+}
+
+@media (min-width: 1400px) {
+    .codeContainer {
+        margin-left: 190px;
+    }
+}
+
+@media (min-width: 1700px) {
+    .codeContainer {
+        margin-left: 120px;
+    }
+}
+@media (min-width: 1900px) {
+    .codeContainer {
+        margin-left: 30px;
+    }
+}
