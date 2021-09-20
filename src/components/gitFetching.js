@@ -1,10 +1,14 @@
 const BRANCH = 'master';
 
+/**
+ * Fetches the file structure from Github
+ * @returns {Promise<unknown>}
+ */
 export const getFileStructure = () => {
   const baseUrl =
     'https://api.github.com/repos/qi-tech/api-documentation/git/trees/';
   return new Promise((resolve, reject) => {
-    const treeUrl = `${baseUrl}${BRANCH}?recursive=1&client_id=bbc9f73a6c354ba2271d&client_secret=aeddb1c5e6088af99880fc62aa5defbeafa15869`;
+    const treeUrl = `${baseUrl}${BRANCH}?recursive=1`;
     fetch(treeUrl)
       .then(r => r.json())
       .then(trees => {
@@ -14,6 +18,11 @@ export const getFileStructure = () => {
   });
 };
 
+/**
+ * Get the Markdown of the file from Github
+ * @param path
+ * @returns {Promise<unknown>}
+ */
 export const getFile = path =>
   new Promise((resolve, reject) => {
     if (!path) {
@@ -29,6 +38,11 @@ export const getFile = path =>
       .catch(r => reject(r));
   });
 
+/**
+ * Sorts the file structure
+ * @param structure
+ * @returns {{}}
+ */
 export const organizeFilesStructure = structure => {
   const fileStructure = {};
   structure.forEach(node => {
@@ -51,7 +65,7 @@ const organizeChildren = (parent, depth = 2) => {
     if (child.type === 'blob' && depth === child.path.split('/').length)
       children.push(child);
     else if (child.type === 'tree') {
-      const c = child;
+      const c = { ...child };
       c.children = organizeChildren(
         parent.filter(
           n =>

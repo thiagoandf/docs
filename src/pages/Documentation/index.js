@@ -41,7 +41,7 @@ export default function DocumentationRoot() {
             fileStructure[Object.keys(fileStructure)[0]].children[0],
           );
       })
-      .catch(e => console.log(e));
+      .catch(console.error);
   }, []);
 
   useEffect(() => {
